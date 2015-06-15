@@ -12,10 +12,11 @@
         <table class="panel-body table commit-list table-striped">
             <thead>
                 <tr>
-                    <th class="author">{{.i18n.Tr "repo.commits.author"}}</th>
-                    <th class="sha">SHA1</th>
+										<th></th>
                     <th class="message">{{.i18n.Tr "repo.commits.message"}}</th>
+                    <th class="author">{{.i18n.Tr "repo.commits.author"}}</th>
                     <th class="date">{{.i18n.Tr "repo.commits.date"}}</th>
+                    <th class="sha">SHA1</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,18 +25,26 @@
             {{$r := List .Commits}}
             {{range $r}}
             <tr>
+								<td class="icon">
+                    {{if .User}}
+										<a href="{{AppSubUrl}}/{{.User.Name}}" title="{{.Author.Name}}">
+											<img class="avatar-20" src="{{.User.AvatarLink}}" alt=""/>
+										</a>
+                    {{else}}
+                    <img class="avatar-20" src="{{AvatarLink .Author.Email}}" alt=""/>
+                    {{end}}
+								</td>
+                <td class="message"><span class="text-truncate"><a rel="nofollow" href="{{AppSubUrl}}/{{$username}}/{{$reponame}}/commit/{{.Id}}">{{.Summary}}</a></span></td>
                 <td class="author">
                     {{if .User}}
-                    <img class="avatar-20" src="{{.User.AvatarLink}}" alt=""/>&nbsp;&nbsp;&nbsp;<a href="{{AppSubUrl}}/{{.User.Name}}">{{.Author.Name}}</a>
+										<a href="{{AppSubUrl}}/{{.User.Name}}">{{.Author.Name}}</a>
                     {{else}}
-                    <img class="avatar-20" src="{{AvatarLink .Author.Email}}" alt=""/>&nbsp;&nbsp;&nbsp;{{.Author.Name}}
+										{{.Author.Name}}
                     {{end}}
-                </td>
-                <td class="sha"><a rel="nofollow" class="label label-green" href="{{AppSubUrl}}/{{$username}}/{{$reponame}}/commit/{{.Id}} ">{{SubStr .Id.String 0 10}} </a></td>
-                <td class="message"><span class="text-truncate"><a rel="nofollow"
-                                                                   href="{{AppSubUrl}}/{{$username}}/{{$reponame}}/commit/{{.Id}} ">{{.Summary}}</a></span>
+								</td>
                 </td>
                 <td class="date">{{TimeSince .Author.When $.Lang}}</td>
+                <td class="sha"><a rel="nofollow" href="{{AppSubUrl}}/{{$username}}/{{$reponame}}/commit/{{.Id}} ">{{SubStr .Id.String 0 10}} </a></td>
             </tr>
             {{end}}
             </tbody>

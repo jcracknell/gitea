@@ -1271,6 +1271,10 @@ The register and sign-in page style
 #repo-files-table td.msg .text-truncate {
   max-width: 100%;
 }
+#repo-files-table td.sha {
+  width: 90px;
+  font-family: monospace;
+}
 #repo-files-table td.age,
 #repo-files-table td.size,
 #repo-files-table td.msg a {
@@ -1581,8 +1585,11 @@ The register and sign-in page style
   background-color: #FFF;
   line-height: 28px !important;
 }
-.commit-list .date {
-  width: 120px;
+.commit-list .message {
+  width: 60%;
+}
+.commit-list .message span {
+  max-width: 500px;
 }
 .commit-list .author {
   padding-left: 20px;
@@ -1591,15 +1598,15 @@ The register and sign-in page style
 .commit-list .author img {
   margin-top: -4px;
 }
+.commit-list .date {
+  width: 120px;
+}
+.commit-list .sha {
+  width: 90px;
+}
 .commit-list .sha a {
   font-family: Consolas, Menlo, Monaco, "Lucida Console", monospace;
   font-size: 14px;
-}
-.commit-list .message {
-  width: 60%;
-}
-.commit-list .message span {
-  max-width: 500px;
 }
 .commit-message {
   white-space: pre-wrap;

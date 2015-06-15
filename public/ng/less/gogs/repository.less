@@ -294,6 +294,10 @@
             max-width: 100%;
         }
     }
+		td.sha {
+			width: 90px;
+			font-family: monospace;
+		}
     td.age,
     td.size,
     td.msg a {
@@ -595,8 +599,11 @@
         background-color: #FFF;
         line-height: 28px !important;
     }
-    .date {
-        width: 120px;
+    .message {
+        width: 60%;
+        span {
+            max-width: 500px;
+        }
     }
     .author {
         padding-left: 20px;
@@ -605,16 +612,16 @@
             margin-top: -4px;
         }
     }
-    .sha a {
-        font-family: Consolas, Menlo, Monaco, "Lucida Console", monospace;
-        font-size: 14px;
+    .date {
+        width: 120px;
     }
-    .message {
-        width: 60%;
-        span {
-            max-width: 500px;
-        }
-    }
+		.sha {
+			width: 90px;
+		}
+		.sha a {
+			font-family: Consolas, Menlo, Monaco, "Lucida Console", monospace;
+			font-size: 14px;
+		}
 }
 
 .commit-message {

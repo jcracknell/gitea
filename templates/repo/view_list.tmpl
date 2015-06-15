@@ -25,9 +25,9 @@
         <tr class="has-parent">
             <td class="icon"></td>
             <td class="name"><a href="{{EscapePound .BranchLink}}{{.ParentPath}}">..</a></td>
-            <th class="sha">SHA1</th>
             <td class="msg"></td>
             <td class="age"></td>
+            <th class="sha">SHA1</th>
         </tr>
         {{end}}
         {{range $item := .Files}}
@@ -52,14 +52,14 @@
                 <td class="name">
                     <a href="{{EscapePound $.BranchLink}}/{{$.TreePath}}{{$entry.Name}}" class="text-truncate">{{$entry.Name}}</a>
                 </td>
-                {{end}}
-                <td class="sha">
-                  <a rel="nofollow" class="label label-green" href="{{AppSubUrl}}/{{$.Username}}/{{$.Reponame}}/commit/{{$commit.Id}} ">{{SubStr $commit.Id.String 0 10}} </a>
-                </td>
                 <td class="message">
                   <span class="text-truncate">{{RenderCommitMessage $commit.Summary $.RepoLink}}</span>
                 </td>
+                {{end}}
                 <td class="age">{{TimeSince $commit.Committer.When $.Lang}}</td>
+                <td class="sha">
+                  <a rel="nofollow" href="{{AppSubUrl}}/{{$.Username}}/{{$.Reponame}}/commit/{{$commit.Id}} ">{{SubStr $commit.Id.String 0 10}} </a>
+                </td>
             </tr>
         {{end}}
     </tbody>

@@ -1,20 +1,20 @@
 @import "var";
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 html {
-  font-size: @baseFontSize+1;
-  font-family: Helvetica, "Microsoft Yahei", Arial, sans-serif;
-  // make sure min font size
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  line-height: @baseLineHeight;
+    font-size: @baseFontSize+1;
+    font-family: Helvetica, "Microsoft Yahei", Arial, sans-serif;
+    // make sure min font size
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: @baseLineHeight;
 
-  color: @baseFontColor;
-  background-color: @baseBgColor;
+    color: @baseFontColor;
+    background-color: @baseBgColor;
 
 }
 
@@ -23,8 +23,8 @@ textarea,
 select,
 option,
 button {
-  font-size: @baseFontSize+1;
-  font-family: Helvetica, "Microsoft Yahei", Arial, sans-serif;
+    font-size: @baseFontSize+1;
+    font-family: Helvetica, "Microsoft Yahei", Arial, sans-serif;
 }
 
 // html5 block elements
@@ -41,27 +41,27 @@ nav,
 section,
 summary,
 .block {
-  display: block;
+    display: block;
 }
 
 .inline {
-  display: inline;
+    display: inline;
 }
 
 .inline-block {
-  display: inline-block;
+    display: inline-block;
 }
 
 .dis-table {
-  display: table;
+    display: table;
 }
 
 .dis-table-cell {
-  display: table-cell;
+    display: table-cell;
 }
 
 .dis-flex {
-  display: flex;
+    display: flex;
 }
 
 // html5 media elements
@@ -70,13 +70,13 @@ audio,
 canvas,
 progress,
 video {
-  display: inline-block;
-  vertical-align: baseline;
+    display: inline-block;
+    vertical-align: baseline;
 }
 
 audio:not([controls]) {
-  display: none;
-  height: 0;
+    display: none;
+    height: 0;
 }
 
 // display hidden elements
@@ -97,16 +97,16 @@ template,
 
 a,
 .text-link {
-  color: @linkColor;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover {
-    color: @linkHoverColor;
+    color: @linkColor;
     text-decoration: none;
-  }
-  &:focus {
-    outline: none;
-  }
+    cursor: pointer;
+    &:hover {
+        color: @linkHoverColor;
+        text-decoration: none;
+    }
+    &:focus {
+        outline: none;
+    }
 }
 
 // stylus elements
@@ -114,32 +114,32 @@ a,
 b,
 strong,
 .text-bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 dfn,
 .text-italic {
-  font-style: italic;
+    font-style: italic;
 }
 
 // headers elements
 
 h1,
 .text-h1 {
-  font-size: 2em;
-  margin-bottom: 0.67em;
+    font-size: 2em;
+    margin-bottom: 0.67em;
 }
 
 h2,
 .text-h2 {
-  font-size: 1.6em;
-  margin-bottom: 0.625em;
+    font-size: 1.6em;
+    margin-bottom: 0.625em;
 }
 
 h3,
 .text-h3 {
-  font: 1.2em;
-  margin-bottom: 0.5em;
+    font: 1.2em;
+    margin-bottom: 0.5em;
 }
 
 h4,
@@ -148,46 +148,46 @@ h6,
 .text-h4,
 .text-h5,
 .text-h6 {
-  font-size: 1em;
-  margin-bottom: .3em;
+    font-size: 1em;
+    margin-bottom: .3em;
 }
 
 // text elements
 
 small,
 .text-small {
-  font-size: .8em;
+    font-size: .8em;
 }
 
 sub,
 sup,
 .text-sup,
 .text-sub {
-  font-size: .7em;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    font-size: .7em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
 
 sup,
 .text-sup {
-  top: -0.5em;
+    top: -0.5em;
 }
 
 sub,
 .text-sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 .figure,
 .blockquote {
-  margin: 1em 1.5em;
+    margin: 1em 1.5em;
 }
 
 pre {
-  overflow: auto;
-  margin: 0;
-  padding: .4em 1em;
+    overflow: auto;
+    margin: 0;
+    padding: .4em 1em;
 }
 
 code,
@@ -199,123 +199,123 @@ samp {
 }
 
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 .list-no-style {
-  list-style: none;
+    list-style: none;
 }
 
 // image elements
 
 img {
-  border: none;
+    border: none;
 }
 
 svg:not(:root) {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 // form elements
 
 label {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 textarea,
 input,
 .ipt {
-  padding: .6em;
-  line-height: normal;
-  border: 1px solid @iptBorderColor;
-  &:focus {
-    background-color: @iptFocusColor;
-    outline: none;
-  }
+    padding: .6em;
+    line-height: normal;
+    border: 1px solid @iptBorderColor;
+    &:focus {
+        background-color: @iptFocusColor;
+        outline: none;
+    }
 }
 
 button,.btn {
-  overflow: visible;
-  padding: .6em 1.2em;
+    overflow: visible;
+    padding: .6em 1.2em;
 }
 
 button,
 select {
-  text-transform: none;
-  &:focus {
-    outline: none;
-  }
+    text-transform: none;
+    &:focus {
+        outline: none;
+    }
 }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  cursor: pointer;
-  background-color: @btnBgColor;
-  color: @btnFontColor;
-  border: none;
-  &:hover {
-    background-color: @btnHoverBgColor;
-    color: @btnHoverFontColor;
-  }
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    cursor: pointer;
+    background-color: @btnBgColor;
+    color: @btnFontColor;
+    border: none;
+    &:hover {
+        background-color: @btnHoverBgColor;
+        color: @btnHoverFontColor;
+    }
 }
 
 button[disabled],
 html input[disabled] {
-  cursor: default;
+    cursor: default;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
+    box-sizing: border-box;
+    padding: 0;
 }
 
 input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 fieldset {
-  border: 1px solid @iptBorderColor;
-  margin: 0 2px;
-  padding: 0.4em 0.8em 0.8em;
+    border: 1px solid @iptBorderColor;
+    margin: 0 2px;
+    padding: 0.4em 0.8em 0.8em;
 }
 
 legend {
-  border: 0;
-  padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 textarea {
-  overflow: auto;
-  border: 1px solid @iptBorderColor;
-  padding: .6em;
-  &:focus {
-    background-color: @iptFocusColor;
-    outline: none;
-  }
+    overflow: auto;
+    border: 1px solid @iptBorderColor;
+    padding: .6em;
+    &:focus {
+        background-color: @iptFocusColor;
+        outline: none;
+    }
 }
 
 optgroup {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 // table elements
@@ -327,23 +327,23 @@ table {
 
 td,
 th {
-  padding: 0;
+    padding: 0;
 }
 
 // hr element
 
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-  border: none;
-  border-bottom: 1px solid @hrColor;
-  margin-bottom: .75em;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+    border: none;
+    border-bottom: 1px solid @hrColor;
+    margin-bottom: .75em;
 }
 // radius element
 
 .radius {
-  border-radius: .25em;
+    border-radius: .25em;
 }
 
 // truncate element
@@ -359,9 +359,9 @@ hr {
 // code elements
 
 pre {
-  line-height: 1.6;
-  overflow: auto;
-  padding: 0;
+    line-height: 1.6;
+    overflow: auto;
+    padding: 0;
 }
 
 dt {

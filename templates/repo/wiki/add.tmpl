@@ -6,11 +6,11 @@
         {{.CsrfTokenHtml}}
         <div class="panel-header">
             {{if or .PageTitle}}
-                <h2>{{.PageTitle}}</h2>
-                <input type="hidden" name="title" value="{{.PageTitle}}">
+            <h2>{{.PageTitle}}</h2>
+            <input type="hidden" name="title" value="{{.PageTitle}}">
             {{else}}
-                <label>Title:</label>
-                <input type="text" class="ipt" name="title" value="{{.PageTitle}}">
+            <label>Title:</label>
+            <input type="text" class="ipt" name="title" value="{{.PageTitle}}">
             {{end}}
         </div>
         <div class="panel-content">

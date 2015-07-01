@@ -7,7 +7,7 @@
             <h2>{{.i18n.Tr "auth.active_your_account"}}</h2>
         </div>
         <div class="panel-content">
-        {{if .IsActivatePage}}
+            {{if .IsActivatePage}}
             {{if .ServiceNotEnabled}}
             <p>{{.i18n.Tr "auth.disable_register_mail"}}</p>
             {{else if .ResendLimited}}
@@ -18,7 +18,7 @@
             <label></label>
             <a class="btn btn-green btn-large btn-link btn-radius" href="http://{{Mail2Domain .SignedUser.Email}}">{{.i18n.Tr "auth.sign_in_email"}}</a>
             {{end}}
-        {{else}}
+            {{else}}
             {{if .IsSendRegisterMail}}
             <p>{{.i18n.Tr "auth.confirmation_mail_sent_prompt" .Email .Hours | Str2html}}</p>
             <hr/>
@@ -32,7 +32,7 @@
             <label></label>
             <button class="btn btn-blue btn-large btn-radius">{{.i18n.Tr "auth.resend_mail"}}</button>
             {{end}}
-        {{end}}
+            {{end}}
         </div>
     </form>
 </div>

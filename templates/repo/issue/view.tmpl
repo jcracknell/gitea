@@ -13,12 +13,12 @@
                     <input id="issue-edit-title" class="form-control input-lg pull-left hidden" type="text" value="{{.Issue.Name}}" data-ajax-rel="issue-edit-save" data-ajax-val="val" data-ajax-field="title"/>
                     <input type="hidden" value="{{.Issue.Id}}" data-ajax-rel="issue-edit-save" data-ajax-val="val" data-ajax-field="issue_id"/>
                     <p class="info pull-left">
-                        {{if .IsIssueOwner}}<a class="btn btn-default pull-right issue-edit" href="#" id="issue-edit-btn">Edit</a>
-                        <a class="btn btn-danger pull-right issue-edit-cancel hidden" href="#">Cancel</a>
-                        <a class="btn btn-primary pull-right issue-edit-save hidden" href="#" data-ajax="{{.RepoLink}}/issues/{{.Issue.Index}}" data-ajax-name="issue-edit-save" data-ajax-method="post">Save</a>{{end}}
-                        <span class="status label label-{{if .Issue.IsClosed}}danger{{else}}success{{end}}">{{if .Issue.IsClosed}}Closed{{else}}Open{{end}}</span>
-                        <a href="{{AppSubUrl}}/{{.Issue.Poster.Name}}" class="author"><strong>{{.Issue.Poster.Name}}</strong></a> opened this issue
-                        <span class="time">{{TimeSince .Issue.Created $.Lang}}</span> · {{.Issue.NumComments}} comments
+                    {{if .IsIssueOwner}}<a class="btn btn-default pull-right issue-edit" href="#" id="issue-edit-btn">Edit</a>
+                    <a class="btn btn-danger pull-right issue-edit-cancel hidden" href="#">Cancel</a>
+                    <a class="btn btn-primary pull-right issue-edit-save hidden" href="#" data-ajax="{{.RepoLink}}/issues/{{.Issue.Index}}" data-ajax-name="issue-edit-save" data-ajax-method="post">Save</a>{{end}}
+                    <span class="status label label-{{if .Issue.IsClosed}}danger{{else}}success{{end}}">{{if .Issue.IsClosed}}Closed{{else}}Open{{end}}</span>
+                    <a href="{{AppSubUrl}}/{{.Issue.Poster.Name}}" class="author"><strong>{{.Issue.Poster.Name}}</strong></a> opened this issue
+                    <span class="time">{{TimeSince .Issue.Created $.Lang}}</span> · {{.Issue.NumComments}} comments
                     </p>
                 </div>
                 <div class="issue-main">
@@ -69,8 +69,8 @@
                             <div class="panel-heading">
                                 <a href="{{AppSubUrl}}/{{.Poster.Name}}" class="user">{{.Poster.Name}}</a> commented <span class="time">{{TimeSince .Created $.Lang}}</span>
                                 <!-- <a class="issue-comment-del pull-right issue-action" href="#" title="Edit Comment"><i class="fa fa-times-circle"></i></a>
-                                <a class="issue-comment-edit pull-right issue-action" href="#" title="Remove Comment" data-url="{remove-link}"><i class="fa fa-edit"></i></a> -->
-                                <span class="role label label-default pull-right">Owner</span>
+                                    <a class="issue-comment-edit pull-right issue-action" href="#" title="Remove Comment" data-url="{remove-link}"><i class="fa fa-edit"></i></a> -->
+                                    <span class="role label label-default pull-right">Owner</span>
                             </div>
                             <div class="panel-body markdown">
                                 {{if len .Content}}
@@ -112,8 +112,8 @@
                         <div class="issue-content">
                             <a class="user pull-left" href="{{AppSubUrl}}/{{.Poster.Name}}">{{.Poster.Name}}</a> <span class="label label-primary">Referenced</span> this issue <span class="time">{{TimeSince .Created $.Lang}}</span>
                             <p>
-                                <a class="user pull-left" href="{{AppSubUrl}}/{{.Poster.Name}}"><img class="avatar" src="{{.Poster.AvatarLink}}" alt=""/></a>
-                                {{.ContentHtml}}
+                            <a class="user pull-left" href="{{AppSubUrl}}/{{.Poster.Name}}"><img class="avatar" src="{{.Poster.AvatarLink}}" alt=""/></a>
+                            {{.ContentHtml}}
                             </p>
                         </div>
                     </div>
@@ -121,51 +121,51 @@
                     {{end}}
                     <hr class="issue-line"/>
                     {{if .SignedUser}}<div class="issue-child issue-reply">
-                    <a class="user pull-left" href="{{AppSubUrl}}/{{.SignedUser.Name}}"><img class="avatar" src="{{.SignedUser.AvatarLink}}" alt=""/></a>
-                    <form class="panel panel-default issue-content" action="{{.RepoLink}}/comment/new" method="post" enctype="multipart/form-data">
-                        {{.CsrfTokenHtml}}
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="md-help pull-right">
-                                    {{.i18n.Tr "repo.release.content_with_md" "https://help.github.com/articles/markdown-basics" | Str2html}}
-                                </div>
-                                <ul class="nav nav-tabs" data-init="tabs">
-                                    <li class="active issue-write"><a href="#issue-textarea" data-toggle="tab">Write</a></li>
-                                    <li class="issue-preview"><a href="#issue-preview" data-toggle="tab" data-ajax="/api/v1/markdown" data-ajax-name="issue-preview"  data-ajax-context="{{.RepoLink}}" data-ajax-method="post" data-preview="#issue-preview">Preview</a></li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane" id="issue-textarea">
-                                        <div class="form-group">
-                                            <div id="submit-error" class="text-danger"></div>
-                                            <input type="hidden" value="{{.Issue.Index}}" name="issueIndex"/>
-                                            <textarea class="form-control" name="content" id="issue-reply-content" rows="10" placeholder="Write some content" data-ajax-rel="issue-preview" data-ajax-val="val" data-ajax-field="text">{{.content}}</textarea>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane issue-preview-content" id="issue-preview">Loading...</div>
-                                </div>
-                            </div>
-                            {{if .AttachmentsEnabled}}
-                            <div id="attached">
-                                <div id="attached-list">
-                                    <b>Attachments:</b>
-                                </div>
-                            </div>
-                            {{end}}
-                            <div class="text-right">
+                        <a class="user pull-left" href="{{AppSubUrl}}/{{.SignedUser.Name}}"><img class="avatar" src="{{.SignedUser.AvatarLink}}" alt=""/></a>
+                        <form class="panel panel-default issue-content" action="{{.RepoLink}}/comment/new" method="post" enctype="multipart/form-data">
+                            {{.CsrfTokenHtml}}
+                            <div class="panel-body">
                                 <div class="form-group">
-                                    {{if .AttachmentsEnabled}}
-                                    <input type="file" accept="{{.AllowedTypes}}" style="display: none;" id="attachments-input" name="attachments" multiple />
-                                    <button class="btn-default btn attachment-add" id="attachments-button">Attach images...</button>
-                                    {{end}}
-                                    {{if .IsIssueOwner}}{{if .Issue.IsClosed}}
-                                    <input type="submit" class="btn-default btn issue-open" id="issue-open-btn" data-origin="Reopen" data-text="Reopen & Comment" name="change_status" value="Reopen"/>{{else}}
-                                    <input type="submit" class="btn-default btn issue-close" id="issue-close-btn" data-origin="Close" data-text="Close & Comment" name="change_status" value="Close"/>{{end}}{{end}}&nbsp;&nbsp;
-                                    <button class="btn-success btn" id="issue-reply-btn">Comment</button>
+                                    <div class="md-help pull-right">
+                                        {{.i18n.Tr "repo.release.content_with_md" "https://help.github.com/articles/markdown-basics" | Str2html}}
+                                    </div>
+                                    <ul class="nav nav-tabs" data-init="tabs">
+                                        <li class="active issue-write"><a href="#issue-textarea" data-toggle="tab">Write</a></li>
+                                        <li class="issue-preview"><a href="#issue-preview" data-toggle="tab" data-ajax="/api/v1/markdown" data-ajax-name="issue-preview"  data-ajax-context="{{.RepoLink}}" data-ajax-method="post" data-preview="#issue-preview">Preview</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" id="issue-textarea">
+                                            <div class="form-group">
+                                                <div id="submit-error" class="text-danger"></div>
+                                                <input type="hidden" value="{{.Issue.Index}}" name="issueIndex"/>
+                                                <textarea class="form-control" name="content" id="issue-reply-content" rows="10" placeholder="Write some content" data-ajax-rel="issue-preview" data-ajax-val="val" data-ajax-field="text">{{.content}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane issue-preview-content" id="issue-preview">Loading...</div>
+                                    </div>
+                                </div>
+                                {{if .AttachmentsEnabled}}
+                                <div id="attached">
+                                    <div id="attached-list">
+                                        <b>Attachments:</b>
+                                    </div>
+                                </div>
+                                {{end}}
+                                <div class="text-right">
+                                    <div class="form-group">
+                                        {{if .AttachmentsEnabled}}
+                                        <input type="file" accept="{{.AllowedTypes}}" style="display: none;" id="attachments-input" name="attachments" multiple />
+                                        <button class="btn-default btn attachment-add" id="attachments-button">Attach images...</button>
+                                        {{end}}
+                                        {{if .IsIssueOwner}}{{if .Issue.IsClosed}}
+                                        <input type="submit" class="btn-default btn issue-open" id="issue-open-btn" data-origin="Reopen" data-text="Reopen & Comment" name="change_status" value="Reopen"/>{{else}}
+                                        <input type="submit" class="btn-default btn issue-close" id="issue-close-btn" data-origin="Close" data-text="Close & Comment" name="change_status" value="Close"/>{{end}}{{end}}&nbsp;&nbsp;
+                                        <button class="btn-success btn" id="issue-reply-btn">Comment</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </div>{{else}}<div class="alert alert-warning"><a class="btn btn-success btn-lg" href="{{AppSubUrl}}/user/sign_up">Sign up for free</a> to join this conversation. Already have an account? <a href="{{AppSubUrl}}/user/login">Sign in to comment</a></div>{{end}}
+                        </form>
+                    </div>{{else}}<div class="alert alert-warning"><a class="btn btn-success btn-lg" href="{{AppSubUrl}}/user/sign_up">Sign up for free</a> to join this conversation. Already have an account? <a href="{{AppSubUrl}}/user/login">Sign in to comment</a></div>{{end}}
                 </div>
             </div>
 

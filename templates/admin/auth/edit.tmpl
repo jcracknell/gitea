@@ -21,7 +21,7 @@
                                     <input type="hidden" name="type" value="{{.Source.Type}}"/>
                                     <label class="control-label">
                                         {{range $key, $val := .LoginTypes}}
-                                            {{if eq $key $type}}{{$val}}{{end}}
+                                        {{if eq $key $type}}{{$val}}{{end}}
                                         {{end}}
                                     </label>
                                 </div>

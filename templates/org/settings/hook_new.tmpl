@@ -10,7 +10,7 @@
                 <div id="setting-content">
                     <div id="repo-hooks-panel" class="panel panel-radius">
                         <div class="panel-header">
-                          <strong>{{if .PageIsSettingsHooksNew}}{{.i18n.Tr "repo.settings.add_webhook"}}{{else}}{{.i18n.Tr "repo.settings.update_webhook"}}{{end}}</strong>
+                            <strong>{{if .PageIsSettingsHooksNew}}{{.i18n.Tr "repo.settings.add_webhook"}}{{else}}{{.i18n.Tr "repo.settings.update_webhook"}}{{end}}</strong>
                         </div>
                         {{template "repo/settings/hook_types" .}}
                         {{template "repo/settings/hook_gogs" .}}
@@ -18,20 +18,20 @@
                     </div>
                 </div>
                 {{if .PageIsSettingsHooksEdit}}
-              <br>
+                <br>
                 <div id="setting-content">
                     <div id="repo-hooks-history-panel" class="panel panel-radius">
                         <div class="panel-header">
-                          <strong>{{.i18n.Tr "repo.settings.recent_deliveries"}}</strong>
+                            <strong>{{.i18n.Tr "repo.settings.recent_deliveries"}}</strong>
                         </div>
                         <ul class="panel-body setting-list">
                             <li>Coming soon!</li>
                         </ul>
                     </div>
-              </div>
-              {{end}}
+                </div>
+                {{end}}
             </div>
         </div>
-  </div>
+    </div>
 </div>
 {{template "ng/base/footer" .}}

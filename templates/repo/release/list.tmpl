@@ -35,17 +35,17 @@
                         <div class="grid-9-12 release-detail left">
                             <h4 class="title"><a href="{{$.RepoLink}}/src/{{.TagName}}">{{.Title}}</a> <small>(<a href="{{$.RepoLink}}/releases/edit/{{.TagName}}" rel="nofollow">{{$.i18n.Tr "repo.release.edit"}}</a>)</small></h4>
                             <p class="info">
-                                <span class="author"><img class="avatar-20" src="{{.Publisher.AvatarLink}}">&nbsp;&nbsp;
+                            <span class="author"><img class="avatar-20" src="{{.Publisher.AvatarLink}}">&nbsp;&nbsp;
                                 <a href="{{AppSubUrl}}/{{.Publisher.Name}}">{{.Publisher.Name}}</a></span>
-                                {{if .Created}}<span class="time">{{TimeSince .Created $.Lang}}</span>{{end}}
-                                <span class="ahead">{{$.i18n.Tr "repo.release.ahead" .NumCommitsBehind .Target | Str2html}}</span>
+                            {{if .Created}}<span class="time">{{TimeSince .Created $.Lang}}</span>{{end}}
+                            <span class="ahead">{{$.i18n.Tr "repo.release.ahead" .NumCommitsBehind .Target | Str2html}}</span>
                             </p>
                             <div class="markdown desc">
                                 {{Str2html .Note}}
                             </div>
                             <p class="download">
-                                <a class="btn btn-gray btn-large btn-radius" href="{{$.RepoLink}}/archive/{{.TagName}}.zip" rel="nofollow"><i class="fa fa-download"></i> {{$.i18n.Tr "repo.release.source_code"}} (ZIP)</a>
-                                <a class="btn btn-gray btn-large btn-radius" href="{{$.RepoLink}}/archive/{{.TagName}}.tar.gz"><i class="fa fa-download"></i> {{$.i18n.Tr "repo.release.source_code"}} (TAR.GZ)</a>
+                            <a class="btn btn-gray btn-large btn-radius" href="{{$.RepoLink}}/archive/{{.TagName}}.zip" rel="nofollow"><i class="fa fa-download"></i> {{$.i18n.Tr "repo.release.source_code"}} (ZIP)</a>
+                            <a class="btn btn-gray btn-large btn-radius" href="{{$.RepoLink}}/archive/{{.TagName}}.tar.gz"><i class="fa fa-download"></i> {{$.i18n.Tr "repo.release.source_code"}} (TAR.GZ)</a>
                             </p>
                             <span class="dot">&nbsp;</span>
                         </div>
@@ -56,8 +56,8 @@
                         <div class="grid-9-12 release-detail left">
                             <h5 class="title"><a href="{{$.RepoLink}}/src/{{.TagName}}" rel="nofollow">{{.TagName}}</a> <i class="fa fa-tag"></i></h5>
                             <p class="download">
-                                <a class="download-link" href="{{$.RepoLink}}/archive/{{.TagName}}.zip" rel="nofollow"><i class="fa fa-download"></i> ZIP</a>
-                                <a class="download-link" href="{{$.RepoLink}}/archive/{{.TagName}}.tar.gz"><i class="fa fa-download"></i> TAR.GZ</a>
+                            <a class="download-link" href="{{$.RepoLink}}/archive/{{.TagName}}.zip" rel="nofollow"><i class="fa fa-download"></i> ZIP</a>
+                            <a class="download-link" href="{{$.RepoLink}}/archive/{{.TagName}}.tar.gz"><i class="fa fa-download"></i> TAR.GZ</a>
                             </p>
                             <span class="dot">&nbsp;</span>
                         </div>

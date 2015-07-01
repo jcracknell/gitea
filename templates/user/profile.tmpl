@@ -6,15 +6,15 @@
             <div>
                 {{if .Owner.UseCustomAvatar}}
                 <a href="{{AppSubUrl}}/user/settings" id="profile-avatar" original-title="{{.i18n.Tr "user.change_custom_avatar"}}">
-                {{else}}
-                <a href="http://gravatar.com/emails/" id="profile-avatar" original-title="{{.i18n.Tr "user.change_avatar"}}">
-                {{end}}
-                    <img class="profile-avatar" src="{{.Owner.AvatarLink}}?s=200"title="{{.Owner.Name}}"/>
-                </a>
-                <div class="text-center" id="profile-name">
-                    {{if .Owner.FullName}}<span id="profile-fullname" class="center-block">{{.Owner.FullName}}</span><br>{{end}}
-                    <span class="center-block" id="profile-username">{{.Owner.Name}}</span>
-                </div>
+                    {{else}}
+                    <a href="http://gravatar.com/emails/" id="profile-avatar" original-title="{{.i18n.Tr "user.change_avatar"}}">
+                        {{end}}
+                        <img class="profile-avatar" src="{{.Owner.AvatarLink}}?s=200"title="{{.Owner.Name}}"/>
+                    </a>
+                    <div class="text-center" id="profile-name">
+                        {{if .Owner.FullName}}<span id="profile-fullname" class="center-block">{{.Owner.FullName}}</span><br>{{end}}
+                        <span class="center-block" id="profile-username">{{.Owner.Name}}</span>
+                    </div>
             </div>
             <div class="profile-info">
                 <hr> 
@@ -67,29 +67,29 @@
                 <div class="tab-content">
                     {{if eq .TabName "activity"}}
                     <div class="tab-pane active" id="dashboard-news">
-                    <br>
-                    {{template "user/dashboard/feeds" .}}
+                        <br>
+                        {{template "user/dashboard/feeds" .}}
                     </div>
                     {{else}}
                     <div class="tab-pane active">
                         <div id="org-repo-list">
                             {{range .Repos}}
-                                {{if or (not .IsPrivate) (.HasAccess $.SignedUser)}}
-                                <div class="org-repo-item">
-                                    <ul class="org-repo-status right">
-                                        <li><i class="octicon octicon-star"></i> {{.NumStars}}</li>
-                                        <li><i class="octicon octicon-git-branch"></i> {{.NumForks}}</li>
-                                    </ul>
-                                    <h2>
-                                        <a href="{{AppSubUrl}}/{{$.Owner.Name}}/{{.Name}}">{{.Name}}</a>
-                                        {{if .IsPrivate}}
-                                        <span class="text-gold"><i class="octicon octicon-lock"></i></span>
-                                        {{end}}
-                                    </h2>
-                                    <p class="org-repo-description">{{.Description}}</p>
-                                    <p class="org-repo-updated">{{$.i18n.Tr "org.repo_updated"}} {{TimeSince .Updated $.i18n.Lang}}</p>
-                                </div>
-                                {{end}}
+                            {{if or (not .IsPrivate) (.HasAccess $.SignedUser)}}
+                            <div class="org-repo-item">
+                                <ul class="org-repo-status right">
+                                    <li><i class="octicon octicon-star"></i> {{.NumStars}}</li>
+                                    <li><i class="octicon octicon-git-branch"></i> {{.NumForks}}</li>
+                                </ul>
+                                <h2>
+                                    <a href="{{AppSubUrl}}/{{$.Owner.Name}}/{{.Name}}">{{.Name}}</a>
+                                    {{if .IsPrivate}}
+                                    <span class="text-gold"><i class="octicon octicon-lock"></i></span>
+                                    {{end}}
+                                </h2>
+                                <p class="org-repo-description">{{.Description}}</p>
+                                <p class="org-repo-updated">{{$.i18n.Tr "org.repo_updated"}} {{TimeSince .Updated $.i18n.Lang}}</p>
+                            </div>
+                            {{end}}
                             {{end}}
                         </div>
                     </div>

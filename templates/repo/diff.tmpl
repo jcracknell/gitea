@@ -30,14 +30,14 @@
                     </ul>
                 </span>
                 <p class="author">
-                    {{if .Author}}
-                    <img class="avatar-30" src="{{.Author.AvatarLink}}" />
-                    <a href="{{AppSubUrl}}/{{.Author.Name}}"><strong>{{.Commit.Author.Name}}</strong></a>
-                    {{else}}
-                    <img class="avatar-30" src="{{AvatarLink .Commit.Author.Email}}" />
-                    <strong>{{.Commit.Author.Name}}</strong>
-                    {{end}}
-                    <span class="text-grey" id="authored-time">{{TimeSince .Commit.Author.When $.Lang}}</span>
+                {{if .Author}}
+                <img class="avatar-30" src="{{.Author.AvatarLink}}" />
+                <a href="{{AppSubUrl}}/{{.Author.Name}}"><strong>{{.Commit.Author.Name}}</strong></a>
+                {{else}}
+                <img class="avatar-30" src="{{AvatarLink .Commit.Author.Email}}" />
+                <strong>{{.Commit.Author.Name}}</strong>
+                {{end}}
+                <span class="text-grey" id="authored-time">{{TimeSince .Commit.Author.When $.Lang}}</span>
                 </p>
             </div>
         </div>
@@ -48,8 +48,8 @@
         <div class="diff-detail-box diff-box">
             <a class="pull-right btn btn-gray btn-header btn-radius text-black" data-target="#diff-files">{{.i18n.Tr "repo.diff.show_diff_stats"}}</a>
             <p class="showing">
-                <i class="fa fa-retweet"></i>
-                {{.i18n.Tr "repo.diff.stats_desc" .Diff.NumFiles .Diff.TotalAddition .Diff.TotalDeletion | Str2html}}
+            <i class="fa fa-retweet"></i>
+            {{.i18n.Tr "repo.diff.stats_desc" .Diff.NumFiles .Diff.TotalAddition .Diff.TotalDeletion | Str2html}}
             </p>
             <ol class="detail-files collapse hide" id="diff-files">
                 {{range .Diff.Files}}
@@ -106,9 +106,9 @@
             {{$isImage := (call $.IsImageFile $file.Name)}}
             <div class="panel-body file-body file-code code-view code-diff">
                 {{if $isImage}}
-                    <div class="text-center">
-                        <img src="{{$.RawPath}}/{{.Name}}">
-                    </div>
+                <div class="text-center">
+                    <img src="{{$.RawPath}}/{{.Name}}">
+                </div>
                 {{else}}
                 <table>
                     <tbody>
@@ -135,23 +135,23 @@
                                 <div class="commit-comment clear" id="commit-comment-{{.Id}}">
                                     <a class="author-avatar" href="{{AppSubUrl}}/{{.Poster.Name}}">
                                         <img class="avatar-40 radius"
-                                             src="{{.Poster.AvatarLink}}"
-                                             alt=""></a>
+                                        src="{{.Poster.AvatarLink}}"
+                                        alt=""></a>
 
                                     <div class="panel panel-radius">
                                         <p class="panel-header clear"><a class="author-name" href="{{AppSubUrl}}/{{.Poster.Name}}">{{.Poster.Name}}</a>
-                                            <span class="date">{{TimeSince .Created $.Lang}}</span>
-                                            <span class="action right">
-                                                {{if eq $.Repository.Owner.Id .Poster.Id}}
-                                                <span class="label label-black label-radius">{{$.i18n.Tr "repo.owner"}}</span>
-                                                {{end}}
-                                                {{if $.SignedUser}}
-                                                {{if eq $.SignedUser.Id .Poster.Id}}
-                                                <a href="#" class="edit-comment"><i class="octicon octicon-pencil"></i></a>
-                                                <a href="#" data-id="{{.Id}}" class="remove-comment"><i class="octicon octicon-x"></i></a>
-                                                {{end}}
-                                                {{end}}
-                                            </span>
+                                        <span class="date">{{TimeSince .Created $.Lang}}</span>
+                                        <span class="action right">
+                                            {{if eq $.Repository.Owner.Id .Poster.Id}}
+                                            <span class="label label-black label-radius">{{$.i18n.Tr "repo.owner"}}</span>
+                                            {{end}}
+                                            {{if $.SignedUser}}
+                                            {{if eq $.SignedUser.Id .Poster.Id}}
+                                            <a href="#" class="edit-comment"><i class="octicon octicon-pencil"></i></a>
+                                            <a href="#" data-id="{{.Id}}" class="remove-comment"><i class="octicon octicon-x"></i></a>
+                                            {{end}}
+                                            {{end}}
+                                        </span>
                                         </p>
 
                                         <div class="panel-content content markdown">

@@ -9,21 +9,21 @@
             <li><a href="{{.RepoLink}}/labels">Labels</a></li>
             <li><a href="{{.RepoLink}}/milestones">Milestones</a></li>
             <li class="right" id="issue-new"><a href="{{.RepoLink}}/issues/new">
-                <button id="issue-new-btn" class="btn btn-green text-bold">New Issue</button>
-            </a></li>
-            <!--<li class="right"><a href="#">Filter</a></li>-->
+                    <button id="issue-new-btn" class="btn btn-green text-bold">New Issue</button>
+                </a></li>
+                <!--<li class="right"><a href="#">Filter</a></li>-->
         </ul>
         <div id="issue-list-container">
             <div id="issue-list-menu">
                 <div class="left">
                     <span class="mark open{{if not .IsShowClosed}} hover{{end}}"><a
                             href="{{.RepoLink}}/issues?type={{.ViewType}}">
-                        <i class="octicon octicon-issue-opened"></i> {{.IssueStats.OpenCount}} Open
-                    </a></span>
-                    <span class="mark close{{if .IsShowClosed}} hover{{end}}"><a
-                            href="{{.RepoLink}}/issues?type={{.ViewType}}&state=closed">
-                        <i class="octicon octicon-issue-closed"></i> {{.IssueStats.ClosedCount}} Closed
-                    </a></span>
+                            <i class="octicon octicon-issue-opened"></i> {{.IssueStats.OpenCount}} Open
+                        </a></span>
+                        <span class="mark close{{if .IsShowClosed}} hover{{end}}"><a
+                                href="{{.RepoLink}}/issues?type={{.ViewType}}&state=closed">
+                                <i class="octicon octicon-issue-closed"></i> {{.IssueStats.ClosedCount}} Closed
+                            </a></span>
                 </div>
                 <ul id="issue-list-filter" class="right menu menu-line">
                     <li class="down drop label-filter">
@@ -70,11 +70,11 @@
                         <i class="octicon octicon-comment"></i> {{.NumComments}}
                     </a>
                     <p class="title text-bold">
-                        <span class="label label-black index-num">#{{.Index}}</span>
-                        <a href="{{$.RepoLink}}/issues/{{.Index}}" class="title-text">{{.Name}}</a>
-                        {{range .Labels}}
-                        <span class="label issue-label" style="background-color: {{.Color}}">{{.Name}}</span>
-                        {{end}}
+                    <span class="label label-black index-num">#{{.Index}}</span>
+                    <a href="{{$.RepoLink}}/issues/{{.Index}}" class="title-text">{{.Name}}</a>
+                    {{range .Labels}}
+                    <span class="label issue-label" style="background-color: {{.Color}}">{{.Name}}</span>
+                    {{end}}
                     </p>
 
                     <p class="desc">opened {{TimeSince .Created $.Lang}} by <a href="{{AppSubUrl}}/{{.Poster.Name}}">{{.Poster.Name}}</a>

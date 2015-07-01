@@ -5,18 +5,18 @@
     <div id="repo-content" class="clear container">
         <div class="panel panel-radius" id="repo-wiki">
             <p class="panel-header">
-                <i class="icon fa fa-book fa-lg"></i>
-                <strong class="file-name">{{.Page.Title}}</strong>
-                {{if .CanWrite}}
-                <span class="action right">
-                    <a href="{{$.RepoLink}}/wiki/{{.Page.Alias}}/edit" class="edit-wiki-page">
-                        <i class="octicon octicon-pencil"></i>
-                    </a>
-                    <a href="{{$.RepoLink}}/wiki/{{.Page.Alias}}/remove" class="remove-wiki-page">
-                        <i class="octicon octicon-x"></i>
-                    </a>
-                </span>
-                {{end}}
+            <i class="icon fa fa-book fa-lg"></i>
+            <strong class="file-name">{{.Page.Title}}</strong>
+            {{if .CanWrite}}
+            <span class="action right">
+                <a href="{{$.RepoLink}}/wiki/{{.Page.Alias}}/edit" class="edit-wiki-page">
+                    <i class="octicon octicon-pencil"></i>
+                </a>
+                <a href="{{$.RepoLink}}/wiki/{{.Page.Alias}}/remove" class="remove-wiki-page">
+                    <i class="octicon octicon-x"></i>
+                </a>
+            </span>
+            {{end}}
             </p>
 
             <div class="panel-content markdown code-view" id="repo-code-view">

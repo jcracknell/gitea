@@ -15,8 +15,8 @@
                             <form id="delete-org-form" action="{{AppSubUrl}}/org/{{.Org.LowerName}}/settings/delete" method="post">
                                 {{.CsrfTokenHtml}}
                                 <p class="field">
-                                    <span class="form-label"></span>
-                                    <button class="btn btn-red btn-large btn-radius" id="delete-org-btn" href="#delete-org-modal">{{.i18n.Tr "org.settings.confirm_delete_account"}}</button>
+                                <span class="form-label"></span>
+                                <button class="btn btn-red btn-large btn-radius" id="delete-org-btn" href="#delete-org-modal">{{.i18n.Tr "org.settings.confirm_delete_account"}}</button>
                                 </p>
                             </form>
                             <div class="white-popup-block mfp-hide" id="delete-org-modal">

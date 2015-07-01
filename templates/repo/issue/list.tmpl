@@ -84,37 +84,37 @@
                         </span>
                     </h5>
                     <p class="info">
-                        <span class="author"><img class="avatar" src="{{.Poster.AvatarLink}}" alt="" width="20"/>
+                    <span class="author"><img class="avatar" src="{{.Poster.AvatarLink}}" alt="" width="20"/>
                         <a href="{{AppSubUrl}}/{{.Poster.Name}}">{{.Poster.Name}}</a></span>
-                        <span class="time">{{TimeSince .Created $.Lang}}</span>
-                        <span class="comment"><i class="fa fa-comments"></i> {{.NumComments}}</span>
+                    <span class="time">{{TimeSince .Created $.Lang}}</span>
+                    <span class="comment"><i class="fa fa-comments"></i> {{.NumComments}}</span>
                     </p>
                 </div>
                 {{end}}{{end}}
             </div>
-            </div>
         </div>
     </div>
 </div>
+</div>
 <script src="/js/bootstrap-colorpicker.min.js"></script>
 <script>
-    $(function(){
-        $('.label-color-picker').colorpicker({
-            input: $('#label-color-ipt')
-        }).on('changeColor', function (ev) {
-            var $ipt = $('#label-color-ipt2');
-            if ($ipt.val().length != 4) {
-                $ipt.val(ev.color.toHex());
-            }
-        });
-        $('.label-change-color-picker').colorpicker({
-            input:$('#label-color-change-ipt')
-        }).on('changeColor', function (ev) {
-            var $ipt = $('#label-color-change-ipt2');
-            if ($ipt.val().length != 4) {
-                $ipt.val(ev.color.toHex());
-            }
-        });
+$(function(){
+    $('.label-color-picker').colorpicker({
+        input: $('#label-color-ipt')
+    }).on('changeColor', function (ev) {
+        var $ipt = $('#label-color-ipt2');
+        if ($ipt.val().length != 4) {
+            $ipt.val(ev.color.toHex());
+        }
     });
+    $('.label-change-color-picker').colorpicker({
+        input:$('#label-color-change-ipt')
+    }).on('changeColor', function (ev) {
+        var $ipt = $('#label-color-change-ipt2');
+        if ($ipt.val().length != 4) {
+            $ipt.val(ev.color.toHex());
+        }
+    });
+});
 </script>
 {{template "base/footer_old" .}}

@@ -18,11 +18,11 @@
         <li class="right {{if .PageIsUserSettings}}current{{end}}">
             <a href="{{AppSubUrl}}/user/settings" title="{{.i18n.Tr "account_settings"}}"><i class="octicon octicon-settings"></i></a>
         </li>
-            {{if .IsAdmin}}
-            <li class="right {{if .PageIsAdmin}}current{{end}}">
-                <a href="{{AppSubUrl}}/admin" title="{{.i18n.Tr "admin_panel"}}"><i class="octicon octicon-circuit-board"></i></a>
-            </li>
-            {{end}}
+        {{if .IsAdmin}}
+        <li class="right {{if .PageIsAdmin}}current{{end}}">
+            <a href="{{AppSubUrl}}/admin" title="{{.i18n.Tr "admin_panel"}}"><i class="octicon octicon-circuit-board"></i></a>
+        </li>
+        {{end}}
         <li class="right down">
             <a href="#"><i class="octicon octicon-plus"></i></a>
             <ul class="menu menu-down" id="header-new-repo-menu">
@@ -38,23 +38,23 @@
             </a>
         </li>
         {{else}}
-            {{if .PageIsHome}}
-            <li class="right" id="header-nav-help">
-                <a target="_blank" href="http://gogs.io/docs"><i class="octicon octicon-info"></i>&nbsp;&nbsp;{{.i18n.Tr "help"}}</a>
-            </li>
-            <li class="right" id="header-nav-explore">
-                <a href="{{AppSubUrl}}/explore"><i class="octicon octicon-globe"></i>&nbsp;&nbsp;{{.i18n.Tr "explore"}}</a>
-            </li>
-            {{else}}
-            <li class="right" id="header-nav-sign-in">
-                <a href="{{AppSubUrl}}/user/login" title="Sign In"><i class="octicon octicon-sign-in"></i> {{.i18n.Tr "sign_in"}}</a>
-            </li>
-            {{if .ShowRegistrationButton}}
-            <li class="right">
-                <a href="{{AppSubUrl}}/user/sign_up" title="Account Settings"><i class="octicon octicon-person-add"></i> {{.i18n.Tr "register"}}</a>
-            </li>
-            {{end}}
-            {{end}}
+        {{if .PageIsHome}}
+        <li class="right" id="header-nav-help">
+            <a target="_blank" href="http://gogs.io/docs"><i class="octicon octicon-info"></i>&nbsp;&nbsp;{{.i18n.Tr "help"}}</a>
+        </li>
+        <li class="right" id="header-nav-explore">
+            <a href="{{AppSubUrl}}/explore"><i class="octicon octicon-globe"></i>&nbsp;&nbsp;{{.i18n.Tr "explore"}}</a>
+        </li>
+        {{else}}
+        <li class="right" id="header-nav-sign-in">
+            <a href="{{AppSubUrl}}/user/login" title="Sign In"><i class="octicon octicon-sign-in"></i> {{.i18n.Tr "sign_in"}}</a>
+        </li>
+        {{if .ShowRegistrationButton}}
+        <li class="right">
+            <a href="{{AppSubUrl}}/user/sign_up" title="Account Settings"><i class="octicon octicon-person-add"></i> {{.i18n.Tr "register"}}</a>
+        </li>
+        {{end}}
+        {{end}}
         {{end}}
     </ul>
 </header>
